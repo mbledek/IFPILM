@@ -57,12 +57,7 @@ This script creates time-series plots (and noise/correlation plots) saved under 
 (each foldername is expected to be YYYYMMDD like 20250901.)
 
 > Per-day PT100 log:
-
 `/dane dobowe/<YYYYMMDD>/picolog.csv`
-<img width="1200" height="600" alt="ppt_1" src="https://github.com/user-attachments/assets/ec3b2262-351f-4789-866a-f58de470374d" />
-<img width="1200" height="600" alt="hall_1" src="https://github.com/user-attachments/assets/4f36e048-e4a7-4051-8867-14651c7a3f43" />
-<img width="1200" height="600" alt="hall_2" src="https://github.com/user-attachments/assets/abf95b39-2293-482c-a434-00dcac5c6874" />
-
 
 > Weather CSV that pogodynka.py helps to create:
 `Pogoda {dates}.csv`
@@ -77,7 +72,9 @@ Console output with cross-correlation results (max/min and lag/time) for each te
 
 ## impulse_data.py
 Analyze experimental impulse / engine test data stored under a configurable work_folder. The script decides whether a measurement file is a Hall engine (long record) or a PPT engine (short record) and runs the appropriate analysis routine (hall.analyze_hall() for Hall; ppt.analyze_ppt() for PPT). It can also compute a calibration-derived mass/impulse using a separate “calibrator” folder.
-
+<img width="1200" height="600" alt="ppt_1" src="https://github.com/user-attachments/assets/ec3b2262-351f-4789-866a-f58de470374d" />
+<img width="1200" height="600" alt="hall_1" src="https://github.com/user-attachments/assets/4f36e048-e4a7-4051-8867-14651c7a3f43" />
+<img width="1200" height="600" alt="hall_2" src="https://github.com/user-attachments/assets/abf95b39-2293-482c-a434-00dcac5c6874" />
 
 > [!IMPORTANT]
 > Inputs required
@@ -89,3 +86,7 @@ Outputs produced by impulse_data.py
 - Console output describing per-file analysis (prints “I think it's a Hall engine!” or “I think it's a PPT engine!”, thrust/impulse values, and error statistics).
 
 - Interactive plots shown via matplotlib.pyplot.show() if enable_plot = True. (Important) the script does not save plots to disk by default (unlike daily.py).
+
+# Thanks!
+
+Thanks to the amazing team at IFPILM (IPPLM) for hosting me and helping me create this code!
