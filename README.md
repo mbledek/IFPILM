@@ -44,33 +44,33 @@ The created CSV format (semicolon-separated) is intentionally matched by daily.p
 Analyze a single day or multiple days of recorded displacement data, compute noise & derivatives, merge with PT100 temperature logs, and compute correlations between displacement (or its derivative) and various weather variables.
 
 This script creates time-series plots (and noise/correlation plots) saved under plots/.
+> [!IMPORTANT]
+> Input paths required (as used in the code):
 
-Input paths required (as used in the code):
-
-- Measurement/time-series file(s):
+> Measurement/time-series file(s):
 `/dane dobowe/<YYYYMMDD>/TB/00`
 (each foldername is expected to be YYYYMMDD like 20250901.)
 
-- Per-day PT100 log:
+> Per-day PT100 log:
 `/dane dobowe/<YYYYMMDD>/picolog.csv`
 
-- Weather CSV that pogodynka.py helps to create:
+> Weather CSV that pogodynka.py helps to create:
 `Pogoda {dates}.csv`
 
 where dates is the dates string used inside multiple() (e.g. "01-08").
 
 PNG plots saved under plots/ (filenames include the dates token and the plot subtitle). 
-
-Derivative plots if `derivative=True`.
+> [!NOTE]
+> Derivative plots if `derivative=True`.
 
 Console output with cross-correlation results (max/min and lag/time) for each tested weather parameter.
 
 ## impulse_data.py
 Analyze experimental impulse / engine test data stored under a configurable work_folder. The script decides whether a measurement file is a Hall engine (long record) or a PPT engine (short record) and runs the appropriate analysis routine (hall.analyze_hall() for Hall; ppt.analyze_ppt() for PPT). It can also compute a calibration-derived mass/impulse using a separate “calibrator” folder.
+> [!IMPORTANT]
+> Inputs required
 
-Inputs required
-
-- `work_folder` — folder containing data files. Each file is expected to be tab-separated and follow the Time [ms] header format above.
+> `work_folder` — folder containing data files. Each file is expected to be tab-separated and follow the Time [ms] header format above.
 
 Outputs produced by impulse_data.py
 
