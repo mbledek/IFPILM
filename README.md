@@ -42,6 +42,11 @@ The created CSV format (semicolon-separated) is intentionally matched by daily.p
 
 ## daily.py
 Analyze a single day or multiple days of recorded displacement data, compute noise & derivatives, merge with PT100 temperature logs, and compute correlations between displacement (or its derivative) and various weather variables.
+<img width="1378" height="855" alt="01-08 PT100 temp  C" src="https://github.com/user-attachments/assets/dce41dce-d6c4-42c3-8001-6423b7b657ed" />
+<img width="1356" height="855" alt="01-08 derivative  PT100 temp  C" src="https://github.com/user-attachments/assets/81efa221-0466-4a3d-bdef-c2d555467aa1" />
+<img width="1350" height="855" alt="01-08 Noise " src="https://github.com/user-attachments/assets/1304d094-a76a-4453-8c56-fe1925ed3991" />
+<img width="1410" height="855" alt="01-08 Noise Number of cars per hour" src="https://github.com/user-attachments/assets/64a820e7-5b3f-454c-8f60-5df8c34d4e01" />
+
 
 This script creates time-series plots (and noise/correlation plots) saved under plots/.
 > [!IMPORTANT]
@@ -52,7 +57,12 @@ This script creates time-series plots (and noise/correlation plots) saved under 
 (each foldername is expected to be YYYYMMDD like 20250901.)
 
 > Per-day PT100 log:
+
 `/dane dobowe/<YYYYMMDD>/picolog.csv`
+<img width="1200" height="600" alt="ppt_1" src="https://github.com/user-attachments/assets/ec3b2262-351f-4789-866a-f58de470374d" />
+<img width="1200" height="600" alt="hall_1" src="https://github.com/user-attachments/assets/4f36e048-e4a7-4051-8867-14651c7a3f43" />
+<img width="1200" height="600" alt="hall_2" src="https://github.com/user-attachments/assets/abf95b39-2293-482c-a434-00dcac5c6874" />
+
 
 > Weather CSV that pogodynka.py helps to create:
 `Pogoda {dates}.csv`
@@ -67,6 +77,8 @@ Console output with cross-correlation results (max/min and lag/time) for each te
 
 ## impulse_data.py
 Analyze experimental impulse / engine test data stored under a configurable work_folder. The script decides whether a measurement file is a Hall engine (long record) or a PPT engine (short record) and runs the appropriate analysis routine (hall.analyze_hall() for Hall; ppt.analyze_ppt() for PPT). It can also compute a calibration-derived mass/impulse using a separate “calibrator” folder.
+
+
 > [!IMPORTANT]
 > Inputs required
 
