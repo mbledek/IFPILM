@@ -1,0 +1,12 @@
+matplotlib
+numpy
+scipy
+pandas
+
+requests
+logzero
+
+# only needed for pogodynka.py
+selenium
+webdriver_manager
+pillow
